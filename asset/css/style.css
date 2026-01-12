@@ -8,5 +8,99 @@ html {
 
 /* khôi phục lại cỡ chữ mặc định theo rem */
 body {
-    font-size: 1.6rem;
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.main-content {
+  width: 1170px;
+
+  /* khi co nhỏ lại mỗi bên sẽ cách viền màn hình 24px nên trừ cho 48px */
+  max-width: calc(100% - 48px);
+
+  /* mẹo căn giữa */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header{
+  background: #FFFCF4;
+}
+
+.header.fixed{
+  position: sticky;
+  top: -28px; /* lấy 36 khoảng cách trên -8 khoảng cách dưới, khi kéo xuống còn 8px thì nó sẽ đứng lại */
+}
+.header .body {
+  /*body thì có thể lúc sau sẽ có trùng nhưng header chỉ có 1 nên sẽ hiểu là tác động vào body là con của header*/
+  display: flex;
+  align-items: center;
+  padding: 36px 0 8px;
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.nav ul {
+  display: flex;
+}
+
+.nav a {
+  position: relative; /*để after có thể định vị được so với thẻ a*/
+
+  color: #5f5b53;
+  font-size: 1.6rem;
+  /* background-color: violet; */
+  padding: 8px 21px;
+}
+
+.nav li.active a,
+.nav a:hover {
+  color: #171100;
+
+  /* dùng text-shadow thay vì dùng font-weight để tránh bị dịch chuyển chữ */
+  /* font-weight: 600; */
+  text-shadow: 1px 0 0 currentColor;
+  /* line-height: 28px; */
+}
+
+.nav li.active a:after {
+  position: absolute; /*để định vị so với thẻ a*/
+  left: 21px;
+  bottom: 6px;
+
+  display: block; /*after là inline nên cần block để hiển thị*/
+  content: ""; /*after là phải có content*/
+  width: 1.2rem;
+  height: 0.2rem;
+  border-radius: 0.1rem;
+  background: #171100;
+}
+
+.btn {
+  /*code chung cho các nút */
+  display: inline-block;
+  min-width: 118px;
+  width: 14.4rem;
+  padding: 11px 16px;
+  border-radius: 2.45rem;
+  background: #171100;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.header .btn-sign-up {
+  mix-width: 144px;
+}
+
+
+.header .action{
+  margin-left: 49px; /* vì các thẻ a có padding là 21 rồi nên chỉ cần cộng thêm 49 là dc */
 }
