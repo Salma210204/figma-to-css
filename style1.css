@@ -56,6 +56,23 @@ a {
   opacity: 0.9;
 }
 
+.line-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--line-clamp, 1); /* số dòng muốn hiển thị */
+  overflow: hidden;
+}
+
+.line-clamp.line-2 {
+  /* thẻ nào có cả 2 class này mới áp dụng, quá 2 dòng sẽ có ba chấm */
+  -webkit-line-clamp: 2;
+}
+
+.break-all {
+  /* để có có nhiều dòng mà dòng đó không có khoảng cách giữa các từ cũng ko phá vỡ giao diện */
+  word-break: break-all;
+}
+
 /* ============== HEADER ============= */
 .header {
   background-color: #fffcf4;
@@ -345,7 +362,7 @@ main .hero {
 }
 
 .popular-bottom .coure-item {
-  /* width: 370px; */
+  flex: 1; /* chia đều các phần tử con trong flex */
   border-radius: 1.2rem;
   border: 1px solid #e2dfda;
   background: #fff;
