@@ -445,25 +445,35 @@ main .hero {
 
 /* ====================== FEEDBACK ========================= */
 .feedback {
-  margin-top: 135px; /* 200-65 */
+  margin-top: 135px;
   padding: 96px 0;
-  background: #2e2100;
+  background-color: #2e2100;
 }
 
-.feedback .feedback-item {
+.course-list {
+  display: flex;
+  overflow: hidden;
+}
+
+.course-item {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-shrink: 0;
 }
 
-.feedback-item .personal-info .avatar {
+.feedback .feedback-detail {
+  width: 66%;
+}
+.feedback .course-item .avatar {
   width: 7.2rem;
   height: 7.2rem;
-  border-radius: 50%;
   object-fit: cover;
+  border-radius: 50%;
 }
 
-.feedback-item .personal-info .member-name {
+.feedback .course-item .name-member {
   margin-top: 18px;
   color: #f7f7f7;
   font-family: var(--font-heading);
@@ -472,39 +482,105 @@ main .hero {
   line-height: 142%; /* 141.667% */
 }
 
-.feedback-item .personal-info .desc {
+.feedback .course-item .desc {
   margin-top: 4px;
   color: #bfbcb2;
+  font-family: Poppins;
   font-size: 1.4rem;
-  line-height: 185%; /* 185.714% */
+  line-height: 186%; /* 185.714% */
 }
 
-.feedback-item .dots {
-  margin-top: 28px;
+.feedback .dots {
   display: flex;
-  gap: 8px;
+  margin-top: 28px;
+  gap: 6px;
 }
 
-.feedback-item .dot {
+.feedback .dot {
   width: 0.6rem;
   height: 0.6rem;
   border-radius: 50%;
-  background: #634700;
+  background-color: #634700;
   cursor: pointer;
 }
 
-.feedback-item .dot.active {
-  background: var(--primary-color);
+.feedback .dots .dot.active {
+  background-color: var(--primary-color);
   cursor: default;
 }
 
-.feedback-item .content {
-  width: 66%; /* 770/1170 = 0.658 */
-}
-
-.feedback-item .content blockquote {
+.feedback blockquote {
   color: #fff;
+  font-family: Poppins;
   font-size: 2.6rem;
   font-style: italic;
   line-height: 154%; /* 153.846% */
+}
+
+/* ====================== FEATURE ========================= */
+.feature {
+  margin-top: 135px;
+  padding: 65px 0;
+}
+
+.feature .body-feater {
+  display: flex;
+  justify-content: space-between;
+}
+
+.body-feater .feature-left {
+  display: flex;
+  gap: 30px;
+}
+
+.body-feater .feature-left img {
+  width: 270px;
+  height: 405px;
+  object-fit: cover;
+  border-radius: 2rem;
+}
+
+.feature-left img.lower {
+  margin-top: 34px;
+}
+
+.feature-right {
+  width: 41%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feature-right .desc {
+  margin-top: 16px;
+  color: #5f5b53;
+  font-size: 1.6rem;
+  line-height: 176%; /* 175% */
+}
+
+.feature-right .cta-btn {
+  margin-top: 32px;
+  width: 13.7rem;
+  line-height: 5rem;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  background-color: var(--primary-color);
+}
+
+/* ====================== FEATURE 2 ========================= */
+.feature-2nd {
+  margin-top: 70px; /* vì cả 2 đã có pd = 65 => 130, nên lấy 200-130=70 */
+}
+.feature-2nd .body-feater {
+  flex-direction: row-reverse;
+}
+
+.feature-2nd .feature-right {
+  width: 49%;
+}
+
+.feature-2nd .feature-left img {
+  width: 47rem;
+  height: 44rem;
 }
